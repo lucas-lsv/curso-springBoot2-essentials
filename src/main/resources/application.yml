@@ -3,7 +3,7 @@ server:
         include-stacktrace: on_param
 spring:
     datasource:
-        url: jdbc:mysql://localhost:3307/anime?usesSL=false&createDatabaseIfNotExists=true
+        url: jdbc:mysql://localhost:3307/anime?useSSL=false&createDatabaseIfNotExist=true&allowPublickeyRetrieval=true
         username: root
         password: root
     jpa:
