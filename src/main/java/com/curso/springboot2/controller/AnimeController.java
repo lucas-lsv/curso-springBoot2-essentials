@@ -5,6 +5,8 @@
 package com.curso.springboot2.controller;
 
 import com.curso.springboot2.domain.Anime;
+import com.curso.springboot2.requests.AnimePostRequestBody;
+import com.curso.springboot2.requests.AnimePutRequestBody;
 import com.curso.springboot2.service.AnimeService;
 import com.curso.springboot2.util.DateUtil;
 import java.time.LocalDateTime;
@@ -43,11 +45,11 @@ public class AnimeController {
 
     @GetMapping(path = "/{id}")
     public ResponseEntity<Anime> findById(@PathVariable long id) {
-        return ResponseEntity.ok(animeService.findById(id));
+        return ResponseEntity.ok(animeService.findByIdOrThrowBadRequestException(id));
     }
 
     @PostMapping
-    public ResponseEntity<Anime> save(@RequestBody Anime anime) {
+    public ResponseEntity<Anime> save(@RequestBody AnimePostRequestBody anime) {
         return new ResponseEntity(animeService.save(anime), HttpStatus.CREATED);
     }
 
@@ -58,7 +60,7 @@ public class AnimeController {
     }
 
     @PutMapping
-    public ResponseEntity<Void> replace(@RequestBody Anime anime) {
+    public ResponseEntity<Void> replace(@RequestBody AnimePutRequestBody anime) {
         animeService.replace(anime);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
