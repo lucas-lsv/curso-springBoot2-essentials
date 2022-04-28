@@ -5,12 +5,15 @@
 package com.curso.springboot2.repository;
 
 import com.curso.springboot2.domain.Anime;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author lucas
  */
-public interface AnimeRepository extends JpaRepository<Anime, Long>{
+public interface AnimeRepository extends JpaRepository<Anime, Long> {
+    
+    List<Anime> findByname(String name);
     
 }
