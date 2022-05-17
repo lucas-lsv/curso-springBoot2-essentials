@@ -14,6 +14,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface AnimeRepository extends JpaRepository<Anime, Long> {
     
-    List<Anime> findByname(String name);
+    List<Anime> findByName(String name);
     
 }
