@@ -95,7 +95,7 @@ public class AnimeServiceTest {
 
     @Test
     @DisplayName("findByIdorThrowBadRequestException returns list of anime when successful")
-    void findByIdorThrowBadRequestException_ReturnsListofAnimes_WhenSuccessful() {
+    void findByIdOrThrowBadRequestException_ReturnsListOfAnimes_WhenSuccessful() {
         Long expectedId = AnimeCreator.createValidAnime().getId();
 
         Anime animes = animeService.findByIdOrThrowBadRequestException(1);
