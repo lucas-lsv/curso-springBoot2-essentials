@@ -4,6 +4,7 @@
  */
 package com.curso.springboot2.requests;
 
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -11,6 +12,7 @@ import lombok.Data;
  * @author lucas
  */
 @Data
+@Builder
 public class AnimePutRequestBody {
 
     private Long id;

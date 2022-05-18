@@ -5,6 +5,7 @@
 package com.curso.springboot2.requests;
 
 import javax.validation.constraints.NotEmpty;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -12,6 +13,7 @@ import lombok.Data;
  * @author lucas
  */
 @Data
+@Builder
 public class AnimePostRequestBody {
     
     @NotEmpty(message = "The anime name cannot be empty")
